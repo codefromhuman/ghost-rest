@@ -1,10 +1,10 @@
-import { CollectionAside } from 'renderer/core/components/collection-aside';
-import { CollectionFooter } from 'renderer/core/components/collection-footer';
-import { CollectionHeader } from 'renderer/core/components/collection-header';
-import { CollectionSidebar } from 'renderer/core/components/collection-sidebar';
-import { RequestPanel } from 'renderer/core/components/request-panel';
-import { ResponsePanel } from 'renderer/core/components/response-panel';
-import { Tabs } from 'renderer/core/components/tabs';
+import { CollectionAside } from 'renderer/components/collection-aside';
+import { CollectionFooter } from 'renderer/components/collection-footer';
+import { CollectionHeader } from 'renderer/components/collection-header';
+import { CollectionSidebar } from 'renderer/components/collection-sidebar';
+import { RequestPanel } from 'renderer/components/request-panel';
+import { ResponsePanel } from 'renderer/components/response-panel';
+import { Tabs } from 'renderer/components/tabs';
 
 export function Collection() {
   return (

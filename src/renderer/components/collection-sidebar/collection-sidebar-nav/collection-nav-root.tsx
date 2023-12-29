@@ -1,13 +1,13 @@
-import { faker } from '@faker-js/faker';
+import {} from 'classnames';
 import {
   Edit3Icon,
   LucideIcon,
   MessageSquareIcon,
-  MoreVerticalIcon,
-  NetworkIcon,
   PlusIcon,
   SearchIcon,
 } from 'lucide-react';
+import { MOCK_REQUESTS } from 'renderer/mocks/requests';
+import { CollectionSidebarNavItem } from './collection-nav-item';
 
 interface IMenuOption {
   icon: LucideIcon;
@@ -20,7 +20,7 @@ interface IOrgOption {
   handler: () => void;
 }
 
-export function Sidebar() {
+export const CollectionSidebarNavRoot = () => {
   const MENU_OPTIONS: IMenuOption[] = [
     {
       icon: SearchIcon,
@@ -50,6 +50,15 @@ export function Sidebar() {
     },
   ];
 
+  const HTTP_METHOD_COLORS = {
+    get: '#362FD9',
+    post: '#27E1C1',
+    put: '#FFD93D',
+    patch: '#7149C6',
+    delete: '#EA5455',
+    options: '#C9EEFF',
+  };
+
   return (
     <div className="min-w-[300px] h-full bg-secondary border-r-[1px] border-primary flex flex-col">
       {/* Project Bar */}
@@ -67,18 +76,10 @@ export function Sidebar() {
             ))}
           </div>
         </div>
-        {/* Projects List */}
+        {/* Item List */}
         <div className="p-3 flex flex-col flex-1 gap-3">
-          {Array.from({ length: 5 }, () => (
-            <div className="w-full flex flex-row gap-2a justify-between">
-              <button className="flex flex-row gap-2">
-                <NetworkIcon className="text-white" size={20} />
-                <span className="text-white">{faker.person.jobArea()}</span>
-              </button>
-              <button>
-                <MoreVerticalIcon className="text-white" />
-              </button>
-            </div>
+          {Array.from(MOCK_REQUESTS, (item, index) => (
+            <CollectionSidebarNavItem key={index} item={item} />
           ))}
         </div>
       </div>
@@ -93,4 +94,4 @@ export function Sidebar() {
       </div>
     </div>
   );
-}
+};

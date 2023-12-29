@@ -7,8 +7,9 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        primary: '#35858B',
-        secondary: '#072227',
+        primary: '#384147',
+        secondary: '#222A31',
+        accent: '#FF2D66',
         /* HTTP Method Colors */
         http: {
           get: '#362FD9',

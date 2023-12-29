@@ -1,4 +1,4 @@
-import { CollectionCard } from 'renderer/core/components/collection-card';
+import { CollectionCard } from 'renderer/components/collection-card';
 
 export function Home() {
   return (
