@@ -1,8 +1,7 @@
 import { Route, MemoryRouter as Router, Routes } from 'react-router-dom';
 import { MainLayout } from 'renderer/core/layouts';
-import { CollectionLayout } from './core/layouts/collection';
-import { Collections } from './pages/Collections';
-import { Collection } from './pages/Collections/Collection';
+import { Collection } from './pages/collection';
+import { Home } from './pages/home';
 import './styles/index.css';
 
 export default function App() {
@@ -10,11 +9,9 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route path="/" element={<Collections />} />
+          <Route path="/" element={<Home />} />
         </Route>
-        <Route path="/collection" element={<CollectionLayout />}>
-          <Route path="/collection/:id" element={<Collection />} />
-        </Route>
+        <Route path="/collection/:id" element={<Collection />} />
       </Routes>
     </Router>
   );

@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export function Collection() {
+export const CollectionCardRoot = () => {
   const navigate = useNavigate();
 
   function handleGotoCollection() {
@@ -57,4 +57,4 @@ export function Collection() {
       </div>
     </div>
   );
-}
+};

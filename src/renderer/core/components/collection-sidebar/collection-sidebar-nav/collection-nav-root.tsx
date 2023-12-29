@@ -6,7 +6,8 @@ import {
   PlusIcon,
   SearchIcon,
 } from 'lucide-react';
-import { SideBarItem } from './SidebarItem';
+import { MOCK_REQUESTS } from 'renderer/mocks/requests';
+import { CollectionSidebarNavItem } from './collection-nav-item';
 
 interface IMenuOption {
   icon: LucideIcon;
@@ -19,14 +20,7 @@ interface IOrgOption {
   handler: () => void;
 }
 
-interface IItem {
-  label: string;
-  variant: 'request' | 'folder';
-  type?: 'get' | 'post' | 'patch' | 'put' | 'delete' | 'options';
-  items?: IItem[];
-}
-
-export function Sidebar() {
+export const CollectionSidebarNavRoot = () => {
   const MENU_OPTIONS: IMenuOption[] = [
     {
       icon: SearchIcon,
@@ -53,45 +47,6 @@ export function Sidebar() {
       icon: MessageSquareIcon,
       handler: () => {},
       label: 'Help and feedbacks',
-    },
-  ];
-
-  const ITEMS: IItem[] = [
-    {
-      label: 'NO_NAME',
-      variant: 'request',
-      type: 'post',
-    },
-    {
-      label: 'users',
-      variant: 'folder',
-      items: [
-        {
-          label: 'findAll',
-          variant: 'request',
-          type: 'get',
-        },
-        {
-          label: 'findOne',
-          variant: 'request',
-          type: 'get',
-        },
-        {
-          label: 'create',
-          variant: 'request',
-          type: 'post',
-        },
-        {
-          label: 'update',
-          variant: 'request',
-          type: 'patch',
-        },
-        {
-          label: 'destroy',
-          variant: 'request',
-          type: 'delete',
-        },
-      ],
     },
   ];
 
@@ -123,8 +78,8 @@ export function Sidebar() {
         </div>
         {/* Item List */}
         <div className="p-3 flex flex-col flex-1 gap-3">
-          {Array.from(ITEMS, (item, index) => (
-            <SideBarItem key={index} item={item} />
+          {Array.from(MOCK_REQUESTS, (item, index) => (
+            <CollectionSidebarNavItem key={index} item={item} />
           ))}
         </div>
       </div>
@@ -139,4 +94,4 @@ export function Sidebar() {
       </div>
     </div>
   );
-}
+};
