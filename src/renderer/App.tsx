@@ -1,8 +1,8 @@
 import { Route, MemoryRouter as Router, Routes } from 'react-router-dom';
 import { MainLayout } from 'renderer/core/layouts';
-import { Collection } from './pages/collection';
-import { Home } from './pages/home';
-import './styles/index.css';
+import { Collection } from './presentation/pages/collection';
+import { Home } from './presentation/pages/home';
+import './presentation/styles/index.css';
 
 export default function App() {
   return (
