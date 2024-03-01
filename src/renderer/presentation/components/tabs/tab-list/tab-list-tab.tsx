@@ -1,4 +1,4 @@
-import { isNil } from 'renderer/validation/utils/is-nil';
+import { isNil } from '../../../../main/utils/is-nil';
 import { CustomTabProps } from '../tabs-root';
 
 interface TabListTabProps extends CustomTabProps {

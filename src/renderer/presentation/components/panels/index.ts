@@ -1,4 +1,7 @@
+import { HttpPanel } from './http';
+import { WebSocketPanel } from './websocket';
+
 export const Panels = {
-  Request: {},
-  Response: {},
+  Http: HttpPanel,
+  WebSocket: WebSocketPanel,
 };

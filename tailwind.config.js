@@ -2,7 +2,9 @@
 const colors = require('tailwindcss').colors;
 
 module.exports = {
-  content: ['./src/renderer/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/renderer/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,7 +17,7 @@ module.exports = {
           get: '#362FD9',
           post: '#27E1C1',
           put: '#7149C6',
-          pathc: '#FFD93D',
+          patch: '#FFD93D',
           delete: '#EA5455',
           options: '#C9EEFF',
         },
